@@ -1,0 +1,42 @@
+.login-container {
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  grid-template-rows: 100vh;
+  grid-template-areas: 'image form';
+}
+
+.image-container {
+  grid-area: image;
+  height: 100vh;
+  width: fit-content;
+}
+
+.image {
+  grid-area: form;
+  height: 100%;
+  width: 420px;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-box {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+.heading {
+  font-size: 40px;
+  margin-bottom: 0;
+}
+
+.forgot-link {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  margin-bottom: 40px;
+}

@@ -37,31 +37,35 @@ function LoginInput({ label, type, pass }) {
 
   return (
     <div className="input-field">
-      <label>{label}</label>
-      <div className="input-container">
-        <OutlinedInput
-          sx={{ height: '52px', width: '100%' }}
-          type={type === 'email' ? null : showPassword ? 'email' : 'password'}
-          onChange={type === 'email' ? emailValidation : null}
-          endAdornment={
-            pass ? (
-              <InputAdornment position="end">
-                <IconButton
-                  aria-label="toggle password visibility"
-                  onClick={handleClickShowPassword}
-                  edge="end">
-                  {showPassword ? <VisibilityOff /> : <Visibility />}
-                </IconButton>
-              </InputAdornment>
-            ) : null
-          }
-        />
-        {pass ? null : email === '' ? null : message === 'valid' ? (
-          <p className="valin valid">Valid</p>
-        ) : (
-          <p className="valin invalid">Invalid</p>
-        )}
-      </div>
+      <label data-testid="custom">
+        {label}
+        <div className="input-container">
+          <OutlinedInput
+            sx={{ height: '52px', width: '100%' }}
+            type={type === 'email' ? null : showPassword ? 'email' : 'password'}
+            onChange={type === 'email' ? emailValidation : null}
+            endAdornment={
+              pass ? (
+                <InputAdornment position="end">
+                  <IconButton
+                    aria-label="toggle password visibility"
+                    onClick={handleClickShowPassword}
+                    edge="end">
+                    {showPassword ? <VisibilityOff /> : <Visibility />}
+                  </IconButton>
+                </InputAdornment>
+              ) : null
+            }
+          />
+          {pass ? null : email === '' ? null : message === 'valid' ? (
+            <p className="valin valid">Valid</p>
+          ) : (
+            <p data-testid="hi" className="valin invalid">
+              Invalid
+            </p>
+          )}
+        </div>
+      </label>
     </div>
   );
 }

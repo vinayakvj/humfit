@@ -9,7 +9,6 @@
     "@mui/material": "^5.14.10",
     "@mui/styled-engine-sc": "^5.14.10",
     "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "env-cmd": "^10.0.1",
     "react": "^18.2.0",
@@ -24,7 +23,7 @@
     "start:develop": "env-cmd -f .env.develop react-scripts start",
     "start:production": "env-cmd -f .env.production react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "jest",
     "eject": "react-scripts eject",
     "lint": "eslint .",
     "lint:fix": "eslint --fix",
@@ -49,9 +48,22 @@
     ]
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.22.20",
+    "@babel/preset-react": "^7.22.15",
+    "@testing-library/react": "^14.0.0",
+    "babel-jest": "^29.7.0",
     "eslint": "^8.49.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.0.0",
-    "prettier": "^3.0.3"
+    "jest": "^27.5.1",
+    "prettier": "^3.0.3",
+    "react-test-renderer": "^18.2.0"
+  },
+  "jest": {
+    "testEnvironment": "jsdom",
+    "moduleNameMapper": {
+      "\\.css$": "identity-obj-proxy",
+      "^lodash-es$": "lodash"
+    }
   }
 }

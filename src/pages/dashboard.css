@@ -1,0 +1,21 @@
+.dashboard {
+  display: grid;
+  grid-template-columns: 233px 1fr;
+  grid-template-rows: 65px 1fr;
+  grid-template-areas:
+    'sidebar navbar'
+    'sidebar content'
+    'sidebar content';
+}
+
+.sidebar {
+  grid-area: sidebar;
+}
+
+.navbar {
+  grid-area: navbar;
+}
+
+.content {
+  grid-area: content;
+}

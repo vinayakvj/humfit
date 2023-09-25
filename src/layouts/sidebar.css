@@ -1,0 +1,47 @@
+.side {
+  background-color: #4b934b;
+  width: 233px;
+  height: 100vh;
+}
+
+.navs {
+  padding-top: 100px;
+  position: relative;
+  color: white;
+  font-size: large;
+  font-weight: 200;
+  font-weight: 400;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.navs .tags {
+  padding-left: 24px;
+  width: 233px;
+  display: flex;
+  justify-content: left;
+  gap: 37px;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: white;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+.hum-logo {
+  width: 151px;
+}
+
+.side .img {
+  padding-top: 38px;
+  padding-left: 42px;
+}
+
+.tags .icons {
+  width: 27px;
+}

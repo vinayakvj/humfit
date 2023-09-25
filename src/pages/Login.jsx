@@ -2,10 +2,16 @@ import React from 'react';
 import image from '../assets/login-image.png';
 import './login.css';
 import LoginInput from '../components/loginInput';
-
+import { useNavigate } from 'react-router-dom';
 import CustomizedButtons from '../components/loginButton';
 
 function Login() {
+  const nav = useNavigate();
+
+  const handleClick = () => {
+    nav('./dashboard/student');
+  };
+
   return (
     <div className="login-container">
       <div className="image-container">
@@ -24,7 +30,9 @@ function Login() {
           <a href="https://www.facebook.com" className="forgot-link">
             <p>Forgot password?</p>
           </a>
-          <CustomizedButtons />
+          <div onClick={handleClick}>
+            <CustomizedButtons />
+          </div>
         </div>
       </div>
     </div>

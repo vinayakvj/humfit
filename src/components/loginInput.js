@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import './login-input.css';
 import IconButton from '@mui/material/IconButton';
@@ -7,7 +7,22 @@ import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 
 function LoginInput({ label, type, pass }) {
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
   const [showPassword, setShowPassword] = React.useState(false);
+
+  const emailValidation = (e) => {
+    var pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+    var emailValue = e.target.value;
+    setEmail(emailValue);
+    if (email.match(pattern)) {
+      console.log(true);
+      setMessage('valid');
+    } else {
+      console.log(false);
+      setMessage('invalid');
+    }
+  };
 
   const handleClickShowPassword = () => setShowPassword((show) => !show);
 
@@ -16,6 +31,10 @@ function LoginInput({ label, type, pass }) {
     };
    */
 
+  /* function handleChange(e) {
+    setEmail(e.target.value);
+  } */
+
   return (
     <div className="input-field">
       <label>{label}</label>
@@ -23,6 +42,7 @@ function LoginInput({ label, type, pass }) {
         <OutlinedInput
           sx={{ height: '52px', width: '100%' }}
           type={type === 'email' ? null : showPassword ? 'email' : 'password'}
+          onChange={type === 'email' ? emailValidation : null}
           endAdornment={
             pass ? (
               <InputAdornment position="end">
@@ -36,6 +56,11 @@ function LoginInput({ label, type, pass }) {
             ) : null
           }
         />
+        {pass ? null : email === '' ? null : message === 'valid' ? (
+          <p className="valin valid">Valid</p>
+        ) : (
+          <p className="valin invalid">Invalid</p>
+        )}
       </div>
     </div>
   );

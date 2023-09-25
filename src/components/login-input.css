@@ -7,3 +7,16 @@
 .input-field .input-container {
   padding-top: 10px;
 }
+
+.valin {
+  margin-top: 5px;
+  margin-left: 10px;
+}
+
+.valid {
+  color: green;
+}
+
+.invalid {
+  color: red;
+}

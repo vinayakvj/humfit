@@ -21,6 +21,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-left: 30px;
 }
 
 .form-box {
@@ -39,4 +40,35 @@
   color: black;
   font-weight: bold;
   margin-bottom: 40px;
+}
+
+@media (max-width: 600px) {
+  .login-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .image-container {
+    width: 375px;
+    height: 812px;
+  }
+
+  .image {
+    width: 100%;
+    height: 100%;
+  }
+
+  .form-box {
+    display: flex;
+    justify-content: center;
+    width: 350px;
+    height: 100vh;
+  }
+
+  .form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 350px;
+  }
 }

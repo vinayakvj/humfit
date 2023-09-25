@@ -41,7 +41,13 @@ function LoginInput({ label, type, pass }) {
         {label}
         <div className="input-container">
           <OutlinedInput
-            sx={{ height: '52px', width: '100%' }}
+            sx={{
+              height: '52px',
+              width: '100%',
+              '@media screen and (max-width: 600px)': {
+                width: '300px'
+              }
+            }}
             type={type === 'email' ? null : showPassword ? 'email' : 'password'}
             onChange={type === 'email' ? emailValidation : null}
             endAdornment={
@@ -58,7 +64,9 @@ function LoginInput({ label, type, pass }) {
             }
           />
           {pass ? null : email === '' ? null : message === 'valid' ? (
-            <p className="valin valid">Valid</p>
+            <p data-testid="valid" className="valin valid">
+              Valid
+            </p>
           ) : (
             <p data-testid="hi" className="valin invalid">
               Invalid

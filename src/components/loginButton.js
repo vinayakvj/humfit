@@ -12,6 +12,9 @@ const ColorButton = styled(Button)(({ theme }) => ({
   height: '50px',
   '&:hover': {
     backgroundColor: '#013220'
+  },
+  '@media (max-width: 600px)': {
+    width: '85%'
   }
 }));
 

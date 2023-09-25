@@ -11,6 +11,7 @@
 .valin {
   margin-top: 5px;
   margin-left: 10px;
+  margin-bottom: 5px;
 }
 
 .valid {
@@ -19,4 +20,7 @@
 
 .invalid {
   color: red;
+}
+
+@media (max-width: 600px) {
 }

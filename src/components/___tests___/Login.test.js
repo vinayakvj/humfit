@@ -12,7 +12,7 @@ test('Validation working?: invalid', () => {
   render(<LoginInput label="Email" type="email" pass={false} />);
   const input = screen.getByLabelText(/Email/i);
   fireEvent.change(input, { target: { value: 'random' } });
-  const inv = screen.getByText(/Invalid/i);
+  const inv = screen.getByText('Invalid');
   expect(inv).toBeInTheDocument();
 });
 
